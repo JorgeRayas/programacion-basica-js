@@ -21,8 +21,11 @@ function dibujoPorClick() {
   //Si es un valor numerico procedmeos con el algoritmo
   if (!isNaN(lineas)) {
     var ancho = d.width;
-    var color = "#777";
+    var alto = d.height;
     var distancia = ancho / lineas;
+
+    //Limpiamos el lienzo
+    lienzo.clearRect(0, 0, ancho, alto);
 
     for (l = 0; l < lineas; l++) {
       var c1 = l * distancia;
