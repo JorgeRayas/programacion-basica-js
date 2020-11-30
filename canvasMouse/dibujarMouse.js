@@ -1,11 +1,13 @@
-// Variables para obtener el canvaz y el lienzo
+// Variables para obtener el canvas y el lienzo
 var pagina = document.getElementById("dibujito");
 var lienzo = pagina.getContext("2d");
-
+// Boton para limpiar canvas
 var btnLimpiar = document.getElementById("btnLimpiar");
-
 // Bandera para saber cuando empezar o parar de dibujar
 var quiereDibujar = false;
+// Variables para saber las coordenadas
+var x;
+var y;
 
 dibujarMarco();
 
@@ -14,10 +16,6 @@ pagina.addEventListener("mousemove", dibujar);
 pagina.addEventListener("mousedown", detectarClick);
 pagina.addEventListener("mouseup", detectarDejarClick);
 btnLimpiar.addEventListener("click", limpiar);
-
-// Variables para saber las coordenadas
-var x;
-var y;
 
 function dibujar(evento) {
   if (quiereDibujar) {
